@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<job simulateSubmission ="false" maxEvents="100000" softLimits="true" fileListSyntax="xrootd">
+
+    <command>
+    starver SL14i
+    root4star -b -q readMuDst.C\(\"$FILELIST\",\"auau_test_$JOBID.root\"\) &gt;&amp; ${JOBID}.log
+    </command>
+
+    <SandBox installer="ZIP">
+      <Package name="uuRunSet1">
+	<File>file:./.sl64_gcc482</File>
+	<File>file:./readMuDst.C</File>
+	<File>file:./StRoot/StRefMultCorr/</File>
+	<File>file:./StRoot/Correction/</File>
+	<File>file:./StRoot/bichsel/</File>
+      </Package>
+    </SandBox>
+    
+    <input URL="catalog:star.bnl.gov?production=P14ii,trgsetupname=production_15GeV_2014,filetype=daq_reco_MuDst,filename~st_physics,runnumber[]15053000-15070021,storage!=HPSS,sanity=1" nFiles="10000" />
+    
+    <stderr URL="file:./log/err_$JOBID.err"/>
+    <stdout URL="file:./log/log_$JOBID.out" />
+    <output fromScratch="*.root" toURL="file:/star/data02/pwg/deepti/ntuple/auau15GeV/output/" />
+    <output fromScratch="*.log" toURL="file:/star/data02/pwg/deepti/ntuple/auau15GeV/output/" />
+    
+    <Generator>
+      <Location>./log</Location>
+      <ScriptLocation>./script</ScriptLocation>
+      <ListLocation>./input_files</ListLocation>
+    </Generator>
+    
+</job>

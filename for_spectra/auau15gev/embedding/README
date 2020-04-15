@@ -1,0 +1,3 @@
+Each folder has separate cosdes to get efficiencies for pi+, pi-, K+, K-, p and p-bar
+
+the "pip" folder only contains the "my.xml" and "geteff.sh" to run the macro. Copy the macro to other directories.

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<job maxFilesPerProcess="500" minFilesPerProcess="100">
+
+ <SandBox>
+             <Package>
+                <File>file:./Tree_AuAu200.C</File>
+             </Package>
+ </SandBox>
+
+<command>
+starver SL14i
+cd /star/data02/pwg/deepti/embedding/auau15gev/pip_15gev
+geteff.sh
+</command>
+
+<stdout URL="file:/star/data02/pwg/deepti/embedding/auau15gev/pip_15gev/out/$JOBID.out" /> 
+<stderr URL="file:/star/data02/pwg/deepti/embedding/auau15gev/pip_15gev/out/$JOBID.err" />
+
+
+</job>

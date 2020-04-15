@@ -1,0 +1,18 @@
+Analysis Macros : To run only in RCF
+==============================================================
+1. TPC Analysis
+2. TOF Analysis
+3. Embedding codes for TPC effciency*acceptance calculation
+4. Proton background correction
+5. Pion background correction
+
+==============================================================
+Analysis macro for Model calculation : To run only in PDSF
+==============================================================
+1. AMPT Model calculation
+2. UrQMD calculation
+(Generated model data given by Vipul)
+
+==============================================================
+Each foldel contains their own README files to run the codes
+==============================================================

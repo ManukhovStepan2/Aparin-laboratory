@@ -1,0 +1,2 @@
+Read the tree produced by the macro in the folder "tpcAal" and gives the output for tof analysis. Set the path in the "pico.xml" file and create necessary directories to run the macro.
+ 

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- job maxFilesPerProcess="500" minFilesPerProcess="100" -->
+<job maxFilesPerProcess="20" fileListSyntax="paths">
+
+ <SandBox>
+             <Package>
+                <File>file:./StRectree_geant.C</File>
+             </Package>
+ </SandBox>
+
+<command>
+starver SL14i
+cons
+cd /star/data02/pwg/deepti/pion_bkgrnd/auau15gev/lokesh
+@ nFile=0
+while ( $nFile &lt; $INPUTFILECOUNT )
+eval set filename = '$INPUTFILE'$nFile
+root4star -q -b StRectree_geant.C\(1e6,\"$filename\",\"output/test_$JOBID.root\"\)\+\+\
+echo $filename
+
+@ nFile++
+end
+</command>
+
+<stdout URL="file:/star/data02/pwg/deepti/pion_bkgrnd/auau15gev/lokesh/log/$JOBID.out" /> 
+<stderr URL="file:/star/data02/pwg/deepti/pion_bkgrnd/auau15gev/lokesh/log/$JOBID.err" />
+
+<!--<input URL="file:/star/data99/reco/AuAu15/hijing_382/b0_20/minbias/y2014a/gheisha_on/p14ii/rcf15004_*geant.root" nFiles="all" />-->
+<input URL="file:/star/data99/reco/AuAu15/hijing_382/b0_20/minbias/y2014a/gheisha_on/p14ii_Aug_11/rcf16010_*.geant.root" nFiles="all" />
+<output fromScratch="*.root" toURL="file:/star/data02/pwg/deepti/pion_bkgrnd/auau15gev/lokesh/output/" />
+
+<Generator>
+  <Location>/star/data02/pwg/deepti/pion_bkgrnd/auau15gev/lokesh/List/</Location>
+</Generator>
+
+</job>

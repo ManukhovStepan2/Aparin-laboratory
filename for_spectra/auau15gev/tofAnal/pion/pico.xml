@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<job maxFilesPerProcess="50" minFilesPerProcess="20"  fileListSyntax="paths">
+<SandBox>
+<Package>
+<File>file:./.sl64_gcc482/</File>
+<File>file:./doReadPico.C</File>
+</Package>
+</SandBox>
+<command>
+starver SL14i
+<!--cons-->
+cd /star/data02/pwg/deepti/ntuple/auau15GeV/ToF_analysis/pion/0005
+root4star -q -b doReadPico.C\(\"$FILELIST\",\"rootfiles/plots_$JOBID.root\",\"rootfiles/pi_$JOBID.root\",\"rootfiles/ka_$JOBID.root\",\"rootfiles/pr_$JOBID.root\"\)<!--\+\+\-->
+</command>
+<stdout URL="file:/star/data02/pwg/deepti/ntuple/auau15GeV/ToF_analysis/pion/0005/log/$JOBID.out" />
+<stderr URL="file:/star/data02/pwg/deepti/ntuple/auau15GeV/ToF_analysis/pion/0005/log/$JOBID.err" />
+
+<input URL="file:/star/data02/pwg/deepti/ntuple/auau15GeV/output/auau_test_88FA9AE9E4D28EB09A6AA359AB598E25_*.root" nFiles="all" />
+<output fromScratch="*.root" toURL="file:/star/data02/pwg/deepti/ntuple/auau15GeV/ToF_analysis/pion/0005/rootfiles/" />
+
+<Generator>
+<Location>/star/data02/pwg/deepti/ntuple/auau15GeV/ToF_analysis/pion/0005/list0005/</Location>
+</Generator>
+</job>
