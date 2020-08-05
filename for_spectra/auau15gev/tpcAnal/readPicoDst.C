@@ -1,3 +1,38 @@
+// This is needed for calling standalone classes (not needed on RACF)
+#define _VANILLA_ROOT_
+
+// C++ headers
+#include <iostream>
+
+// ROOT headers
+#include "TROOT.h"
+#include "TSystem.h"
+#include "TFile.h"
+#include "TChain.h"
+#include "TTree.h"
+#include "TH1F.h"
+#include "TH1D.h"
+#include "TH2F.h"
+#include "TVector3.h"
+
+
+
+// PicoDst headers
+#include "/home/manukhov/DUBNA/STAR/StPicoEvent/StPicoDstReader.h"
+#include "/home/manukhov/DUBNA/STAR/StPicoEvent/StPicoDst.h"
+#include "/home/manukhov/DUBNA/STAR/StPicoDstMaker/StPicoDstMaker.h"
+#include "/home/manukhov/DUBNA/STAR/StPicoEvent/StPicoEvent.h"
+#include "/home/manukhov/DUBNA/STAR/StPicoEvent/StPicoTrack.h"
+#include "/home/manukhov/DUBNA/STAR/StPicoEvent/StPicoBTofHit.h"
+#include "/home/manukhov/DUBNA/STAR/StPicoEvent/StPicoBTowHit.h"
+#include "/home/manukhov/DUBNA/STAR/StPicoEvent/StPicoEmcTrigger.h"
+#include "/home/manukhov/DUBNA/STAR/StPicoEvent/StPicoBTofPidTraits.h"
+#include "/home/manukhov/DUBNA/STAR/StPicoEvent/StPicoTrackCovMatrix.h"
+
+// Load libraries (for ROOT_VERSTION_CODE >= 393215)
+#if ROOT_VERSION_CODE >= ROOT_VERSION(6,0,0) 
+R__LOAD_LIBRARY(/home/manukhov/DUBNA/STAR/StPicoEvent/libStPicoDst.so)
+#endif
 
 void readPicoDst(TString InputFileList, TString OutputDir) 
 {
