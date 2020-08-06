@@ -54,3 +54,8 @@ void runPicoDstAnalysisWithMacro(const char* inFileName = "/home/manukhov/DUBNA/
 (далее идет остальной код программы)
 
 Имейте в виду, путь до библиотек и до файла picoDst.root нужно будет поменять.
+
+3) Собственно сами picoDst файлы можно скачать, например, тут (выложил в майловское облако; три файла, можно использовать, в принципе, любой):
+https://cloud.mail.ru/public/2X2e/ySGLaNfEJ
+https://cloud.mail.ru/public/pNRT/2zz3smpdA
+https://cloud.mail.ru/public/5wjg/RysiJBKv6
