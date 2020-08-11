@@ -54,5 +54,4 @@ void runPicoDstAnalysisWithMacro(const char* inFileName = "/home/manukhov/DUBNA/
 
 
 (далее идет остальной код программы)
-
-Имейте в виду, путь до библиотек и до файла picoDst.root нужно будет поменять.
+Путь до библиотек и до файла picoDst.root нужно будет поменять.
